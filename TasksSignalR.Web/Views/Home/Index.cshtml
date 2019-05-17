@@ -1,0 +1,46 @@
+﻿
+@using TasksSignalR.Data
+@model IEnumerable<Chore>
+
+<div class="row">
+    <div class="col-md-offset-3 col-md-6 well">
+        <input type="text" placeholder="Add Chore" id="name" name="Name" class="form-control" />
+        <button class="btn btn-primary" id="add-chore">Add Chore</button>
+    </div>
+    <input type="hidden" id="userEmail" value="@User.Identity.Name" />
+    <div class="col-md-offset-3 col-md-6 well">
+        <table class="table table-bordered table-striped" id="chore-table">
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+            @if (Model != null)
+            {
+                foreach (Chore c in Model)
+                {
+                    <tr id="chore-@c.Id">
+                        <td>@c.Name</td>
+                        @if (c.Status == Status.DidntStart)
+                        {
+                            <td><button class="btn btn-success accept" data-chore-id=@c.Id>I'll Accept This Chore!</button></td>
+                        }
+                        else if (c.Status == Status.InProgress && c.User.Email != User.Identity.Name)
+                        {
+                            <td><button class="btn btn-danger" disabled>Task being completed by: @c.User.FirstName @c.User.LastName</button></td>
+                        }
+                        else if(c.Status == Status.InProgress && c.User.Email == User.Identity.Name)
+                        {
+                            <td><button class="btn btn-info completed" data-chore-id=@c.Id>I Finished!</button></td>
+                        }
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aspnet-signalr/1.1.4/signalr.min.js"></script>
+    <script src="/js/index.js"></script>
+}

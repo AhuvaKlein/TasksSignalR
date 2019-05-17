@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksSignalR.Web", "TasksSignalR.Web\TasksSignalR.Web.csproj", "{8E11672E-FD3C-4949-8BA0-0057ABEC2BDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasksSignalR.Data", "TasksSignalR.Data\TasksSignalR.Data.csproj", "{6DED74BA-7D81-4A56-8C45-F386AA5A3283}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E11672E-FD3C-4949-8BA0-0057ABEC2BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E11672E-FD3C-4949-8BA0-0057ABEC2BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E11672E-FD3C-4949-8BA0-0057ABEC2BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E11672E-FD3C-4949-8BA0-0057ABEC2BDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DED74BA-7D81-4A56-8C45-F386AA5A3283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DED74BA-7D81-4A56-8C45-F386AA5A3283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DED74BA-7D81-4A56-8C45-F386AA5A3283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DED74BA-7D81-4A56-8C45-F386AA5A3283}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
